@@ -1,0 +1,30 @@
+name: 'Change Date Everyday'
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'TEMPLATE.md'
+  schedule:
+    # 时区是UTC世界，我们中国在东八区，所以要加8
+    # 下面指我们这的凌晨5点
+    # - cron: '0 21 * * *'
+    # 早上9点触发吧
+    # - cron: '0 1 * * *'
+    # UTC时间触发
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # git啥的
+      - uses: actions/checkout@v2
+      - name: git commit files
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: at-bot
+          author_email: atxiesz@gmail.com
+          add: '*.md'
