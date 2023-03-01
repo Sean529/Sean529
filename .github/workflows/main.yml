@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'TEMPLATE.md'
+      - 'index.js'
   schedule:
     # 时区是UTC世界，我们中国在东八区，所以要加8
     # 下面指我们这的凌晨5点
@@ -22,6 +23,14 @@ jobs:
     steps:
       # git啥的
       - uses: actions/checkout@v2
+      # 安装node
+      - uses: actions/setup-node@v2
+        with:
+          # 要装就装最新稳定版
+          node-version: '14'
+          cache: 'yarn'
+      - name: generate README.md
+        run: yarn install --prod && yarn start
       - name: git commit files
         uses: EndBug/add-and-commit@v7
         with:

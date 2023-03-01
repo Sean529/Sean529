@@ -1,0 +1,27 @@
+{
+  "name": "at",
+  "version": "1.0.0",
+  "repository": "git@github.com:moore529/at-handwritten.git",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./"
+  },
+  "keywords": [],
+  "author": "AT <atxiesz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonofmagic/sonofmagic/issues"
+  },
+  "homepage": "https://github.com/sonofmagic/sonofmagic#readme",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "ascii-art-font": "^1.0.2",
+    "dayjs": "^1.11.4"
+  }
+}
